@@ -27,8 +27,7 @@ set wrapscan
 "curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin('~/.vim/plugged')
 
-"theme monokai
-Plug 'crusoexia/vim-monokai'
+Plug 'cocopon/iceberg.vim'
 
 "go plugin
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
@@ -39,7 +38,7 @@ let g:go_fmt_command = "goimports"
 
 "color scheme
 set t_Co=256
-colorscheme monokai
+colorscheme iceberg
 
 "filetype settings
 autocmd BufRead,BufNewFile *.py setfiletype python
