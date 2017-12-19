@@ -12,6 +12,7 @@ set showmatch
 set laststatus=2
 
 set list listchars=tab:\>\-
+set shiftwidth=4
 
 set tabstop=4
 
@@ -23,6 +24,8 @@ set backspace=indent,eol,start
 
 set incsearch
 set wrapscan
+
+set termguicolors
 
 "curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin('~/.vim/plugged')
