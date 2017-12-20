@@ -12,6 +12,7 @@ set showmatch
 set laststatus=2
 
 set list listchars=tab:\>\-
+
 set shiftwidth=4
 
 set tabstop=4
@@ -35,9 +36,10 @@ Plug 'cocopon/iceberg.vim'
 "go plugin
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
-call plug#end()
+"Dokcerfile
+Plug 'ekalinin/Dockerfile.vim'
 
-let g:go_fmt_command = "goimports"
+call plug#end()
 
 "color scheme
 set t_Co=256
@@ -47,4 +49,6 @@ colorscheme iceberg
 autocmd BufRead,BufNewFile *.py setfiletype python
 autocmd BufRead,BufNewFile *.go setfiletype go
 autocmd BufRead,BufNewFile *.yml setfiletype yaml
+autocmd BufRead,BufNewFile *.yaml setfiletype yaml
+autocmd BufRead,BufNewFile *.toml setfiletype toml
 
