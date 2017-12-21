@@ -51,4 +51,5 @@ autocmd BufRead,BufNewFile *.go setfiletype go
 autocmd BufRead,BufNewFile *.yml setfiletype yaml
 autocmd BufRead,BufNewFile *.yaml setfiletype yaml
 autocmd BufRead,BufNewFile *.toml setfiletype toml
-
+autocmd BufRead,BufNewFile Dockerfile setfiletype Dockerfile
+autocmd BufRead,BufNewFile Dockerfile* setfiletype Dockerfile
