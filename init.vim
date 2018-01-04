@@ -36,6 +36,9 @@ Plug 'cocopon/iceberg.vim'
 "go plugin
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
+"Rust plugin
+Plug 'rust-lang/rust.vim'
+
 "Dokcerfile
 Plug 'ekalinin/Dockerfile.vim'
 
@@ -51,4 +54,5 @@ autocmd BufRead,BufNewFile *.go setfiletype go
 autocmd BufRead,BufNewFile *.yml setfiletype yaml
 autocmd BufRead,BufNewFile *.yaml setfiletype yaml
 autocmd BufRead,BufNewFile *.toml setfiletype toml
-
+autocmd BufRead,BufNewFile *.rs setfiletype rust
+autocmd BufRead,BufNewFile Dockerfile setfiletype Dockerfile
