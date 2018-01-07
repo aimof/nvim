@@ -56,3 +56,4 @@ autocmd BufRead,BufNewFile *.yaml setfiletype yaml
 autocmd BufRead,BufNewFile *.toml setfiletype toml
 autocmd BufRead,BufNewFile *.rs setfiletype rust
 autocmd BufRead,BufNewFile Dockerfile setfiletype Dockerfile
+autocmd BufRead,BufNewFile Dockerfile* setfiletype Dockerfile
