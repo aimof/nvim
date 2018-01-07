@@ -36,6 +36,9 @@ Plug 'cocopon/iceberg.vim'
 "go plugin
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
+"NERDTree
+Plug 'scrooloose/nerdtree'
+
 "Dokcerfile
 Plug 'ekalinin/Dockerfile.vim'
 
@@ -44,6 +47,14 @@ call plug#end()
 "color scheme
 set t_Co=256
 colorscheme iceberg
+
+"NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+map <C-n> :NERDTreeToggle<CR>
+
 
 "filetype settings
 autocmd BufRead,BufNewFile *.py setfiletype python
