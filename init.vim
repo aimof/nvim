@@ -39,6 +39,9 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 "NERDTree
 Plug 'scrooloose/nerdtree'
 
+"Rust plugin
+Plug 'rust-lang/rust.vim'
+
 "Dokcerfile
 Plug 'ekalinin/Dockerfile.vim'
 
@@ -62,5 +65,6 @@ autocmd BufRead,BufNewFile *.go setfiletype go
 autocmd BufRead,BufNewFile *.yml setfiletype yaml
 autocmd BufRead,BufNewFile *.yaml setfiletype yaml
 autocmd BufRead,BufNewFile *.toml setfiletype toml
+autocmd BufRead,BufNewFile *.rs setfiletype rust
 autocmd BufRead,BufNewFile Dockerfile setfiletype Dockerfile
 autocmd BufRead,BufNewFile Dockerfile* setfiletype Dockerfile
