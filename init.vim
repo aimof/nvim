@@ -39,9 +39,6 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 "NERDTree
 Plug 'scrooloose/nerdtree'
 
-"Rust plugin
-Plug 'rust-lang/rust.vim'
-
 "Dokcerfile
 Plug 'ekalinin/Dockerfile.vim'
 
@@ -51,21 +48,39 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'bash install.sh',
     \ }
 
+" (Completion plugin option 1)
+Plug 'roxma/nvim-completion-manager'
+
 " (Optional) Multi-entry selection UI.
 Plug 'junegunn/fzf'
 
 call plug#end()
 
+" nvim-completion-manager
+let $NVIM_PYTHON_LOG_FILE="/tmp/nvim_log"
+let $NVIM_NCM_LOG_LEVEL="DEBUG"
+let $NVIM_NCM_MULTI_THREAD=0
+
 "language Server
+"https://fortes.com/2017/language-server-neovim/
 set hidden
 
 let g:LanguageClient_serverCommands = {
-	\ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+	\ 'rust': ['rustup', 'run', 'stable', 'rls'],
     \ }
 
-nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+autocmd BufRead,BufNewFile *.rs setfiletype rust
+autocmd FileType rust setlocal omnifunc=LanguageClient#complete
+
+" <leader>ld to go to definition
+autocmd FileType rust nnoremap <buffer>
+  \ <leader>ld :call LanguageClient_textDocument_definition()<cr>
+" <leader>lh for type info under cursor
+autocmd FileType rust nnoremap <buffer>
+  \ <leader>lh :call LanguageClient_textDocument_hover()<cr>
+" <leader>lr to rename variable under cursor
+autocmd FileType rust nnoremap <buffer>
+  \ <leader>lr :call LanguageClient_textDocument_rename()<cr>
 
 "color scheme
 set t_Co=256
@@ -85,6 +100,7 @@ autocmd BufRead,BufNewFile *.go setfiletype go
 autocmd BufRead,BufNewFile *.yml setfiletype yaml
 autocmd BufRead,BufNewFile *.yaml setfiletype yaml
 autocmd BufRead,BufNewFile *.toml setfiletype toml
-autocmd BufRead,BufNewFile *.rs setfiletype rust
 autocmd BufRead,BufNewFile Dockerfile setfiletype Dockerfile
 autocmd BufRead,BufNewFile Dockerfile* setfiletype Dockerfile
+
+
