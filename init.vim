@@ -42,6 +42,9 @@ Plug 'rust-lang/rust.vim'
 "NERDTree
 Plug 'scrooloose/nerdtree'
 
+"vim-fugitive
+Plug 'tpope/vim-fugitive'
+
 "Dokcerfile
 Plug 'ekalinin/Dockerfile.vim'
 
