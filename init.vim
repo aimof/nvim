@@ -36,6 +36,9 @@ Plug 'cocopon/iceberg.vim'
 "go plugin
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
+"Rust plugin
+Plug 'rust-lang/rust.vim'
+
 "NERDTree
 Plug 'scrooloose/nerdtree'
 
@@ -60,6 +63,7 @@ call plug#end()
 let $NVIM_PYTHON_LOG_FILE="/tmp/nvim_log"
 let $NVIM_NCM_LOG_LEVEL="DEBUG"
 let $NVIM_NCM_MULTI_THREAD=0
+inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
 
 "language Server
 "https://fortes.com/2017/language-server-neovim/
@@ -71,6 +75,7 @@ let g:LanguageClient_serverCommands = {
 
 autocmd BufRead,BufNewFile *.rs setfiletype rust
 autocmd FileType rust setlocal omnifunc=LanguageClient#complete
+autocmd FileType rust setlocal completefunc=LanguageClient#complete
 
 " <leader>ld to go to definition
 autocmd FileType rust nnoremap <buffer>
