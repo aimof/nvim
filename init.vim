@@ -46,10 +46,10 @@ Plug 'scrooloose/nerdtree'
 Plug 'ekalinin/Dockerfile.vim'
 
 " languageClient
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+"Plug 'autozimu/LanguageClient-neovim', {
+"    \ 'branch': 'next',
+"    \ 'do': 'bash install.sh',
+"    \ }
 
 " (Completion plugin option 1)
 Plug 'roxma/nvim-completion-manager'
@@ -67,25 +67,15 @@ inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
 
 "language Server
 "https://fortes.com/2017/language-server-neovim/
-set hidden
+"set hidden
 
-let g:LanguageClient_serverCommands = {
-	\ 'rust': ['rustup', 'run', 'stable', 'rls'],
-    \ }
+"let g:LanguageClient_serverCommands = {
+"    \ 'rust': ['rustup', 'run', 'stable', 'rls'],
+"    \ }
 
-autocmd BufRead,BufNewFile *.rs setfiletype rust
-autocmd FileType rust setlocal omnifunc=LanguageClient#complete
-autocmd FileType rust setlocal completefunc=LanguageClient#complete
-
-" <leader>ld to go to definition
-autocmd FileType rust nnoremap <buffer>
-  \ <leader>ld :call LanguageClient_textDocument_definition()<cr>
-" <leader>lh for type info under cursor
-autocmd FileType rust nnoremap <buffer>
-  \ <leader>lh :call LanguageClient_textDocument_hover()<cr>
-" <leader>lr to rename variable under cursor
-autocmd FileType rust nnoremap <buffer>
-  \ <leader>lr :call LanguageClient_textDocument_rename()<cr>
+"nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+"nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+"nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 
 "color scheme
 set t_Co=256
@@ -107,5 +97,4 @@ autocmd BufRead,BufNewFile *.yaml setfiletype yaml
 autocmd BufRead,BufNewFile *.toml setfiletype toml
 autocmd BufRead,BufNewFile Dockerfile setfiletype Dockerfile
 autocmd BufRead,BufNewFile Dockerfile* setfiletype Dockerfile
-
-
+autocmd BufRead,BufNewFile *.rs setfiletype rust
