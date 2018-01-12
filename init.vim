@@ -48,6 +48,9 @@ Plug 'tpope/vim-fugitive'
 "Dokcerfile
 Plug 'ekalinin/Dockerfile.vim'
 
+"ion
+Plug 'vmchale/ion-vim'
+
 " languageClient
 "Plug 'autozimu/LanguageClient-neovim', {
 "    \ 'branch': 'next',
