@@ -5,9 +5,11 @@ set softtabstop=4
 set shiftwidth=4
 set autoindent
 
-let g:LanguageClient_autoStart = 1
+let g:rustfmt_autosave = 1
 
-setlocal completefunc=LanguageClient#complete
+"let g:LanguageClient_autoStart = 1
+
+"setlocal completefunc=LanguageClient#complete
 
 " <leader>ld to go to definition
 "nnoremap <buffer>

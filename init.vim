@@ -1,6 +1,10 @@
 "setting
+""encoding
 set fenc=utf-8
 set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8
+
 set autoread
 set showcmd
 
@@ -38,6 +42,16 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 "Rust plugin
 Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
+
+"haskell
+Plug 'eagletmt/neco-ghc'
+Plug 'dag/vim2hs'
+Plug 'pbrisbin/vim-syntax-shakespeare'
+
+"elixir plugin
+Plug 'elixir-lang/vim-elixir'
+Plug 'carlosgaldino/elixir-snippets'
 
 "NERDTree
 Plug 'scrooloose/nerdtree'
@@ -51,11 +65,11 @@ Plug 'ekalinin/Dockerfile.vim'
 "ion
 Plug 'vmchale/ion-vim'
 
-" languageClient
-"Plug 'autozimu/LanguageClient-neovim', {
-"    \ 'branch': 'next',
-"    \ 'do': 'bash install.sh',
-"    \ }
+"conque-GDB
+Plug 'vim-scripts/Conque-GDB'
+
+"grep.vim
+Plug 'vim-scripts/grep.vim'
 
 " (Completion plugin option 1)
 Plug 'roxma/nvim-completion-manager'
@@ -70,18 +84,6 @@ let $NVIM_PYTHON_LOG_FILE="/tmp/nvim_log"
 let $NVIM_NCM_LOG_LEVEL="DEBUG"
 let $NVIM_NCM_MULTI_THREAD=0
 inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
-
-"language Server
-"https://fortes.com/2017/language-server-neovim/
-"set hidden
-
-"let g:LanguageClient_serverCommands = {
-"    \ 'rust': ['rustup', 'run', 'stable', 'rls'],
-"    \ }
-
-"nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-"nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-"nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 
 "color scheme
 set t_Co=256
@@ -104,3 +106,4 @@ autocmd BufRead,BufNewFile *.toml setfiletype toml
 autocmd BufRead,BufNewFile Dockerfile setfiletype Dockerfile
 autocmd BufRead,BufNewFile Dockerfile* setfiletype Dockerfile
 autocmd BufRead,BufNewFile *.rs setfiletype rust
+autocmd BufRead,BufNewFile *.ion setfiletype ion
