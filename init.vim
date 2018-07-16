@@ -1,3 +1,7 @@
+"leader
+let mapleader = "\<space>"
+nnoremap <Leader>w :w<CR>
+
 "setting
 ""encoding
 set fenc=utf-8
@@ -71,19 +75,10 @@ Plug 'vim-scripts/Conque-GDB'
 "grep.vim
 Plug 'vim-scripts/grep.vim'
 
-" (Completion plugin option 1)
-Plug 'roxma/nvim-completion-manager'
-
 " (Optional) Multi-entry selection UI.
 Plug 'junegunn/fzf'
 
 call plug#end()
-
-" nvim-completion-manager
-let $NVIM_PYTHON_LOG_FILE="/tmp/nvim_log"
-let $NVIM_NCM_LOG_LEVEL="DEBUG"
-let $NVIM_NCM_MULTI_THREAD=0
-inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
 
 "color scheme
 set t_Co=256
