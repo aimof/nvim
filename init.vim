@@ -78,6 +78,9 @@ Plug 'vim-scripts/grep.vim'
 " (Optional) Multi-entry selection UI.
 Plug 'junegunn/fzf'
 
+" ale: style check
+Plug 'w0rp/ale'
+
 call plug#end()
 
 "color scheme
