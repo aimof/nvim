@@ -78,7 +78,20 @@ Plug 'vim-scripts/grep.vim'
 " (Optional) Multi-entry selection UI.
 Plug 'junegunn/fzf'
 
+" syntastic
+Plug 'vim-syntastic/syntastic'
+
 call plug#end()
+
+" syntastic: syntax checker
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 "color scheme
 set t_Co=256
