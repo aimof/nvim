@@ -84,6 +84,10 @@ Plug 'vim-syntastic/syntastic'
 " ale: style check
 Plug 'w0rp/ale'
 
+" fzf
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
 call plug#end()
 
 " syntastic: syntax checker
