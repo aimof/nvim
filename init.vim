@@ -81,6 +81,10 @@ Plug 'junegunn/fzf'
 " ale: style check
 Plug 'w0rp/ale'
 
+" fzf
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
 call plug#end()
 
 "color scheme
