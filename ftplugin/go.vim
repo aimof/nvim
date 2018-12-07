@@ -9,5 +9,4 @@ nmap <Leader>c <Plug>(go-coverage-toggle)
 nmap <Leader>t <Plug>(go-test)
 nmap <Leader>d <Plug>(go-def)
 nmap <Leader>p <Plug>(go-def-pop)
-nmap <Leader>b <Plug>(go-build)
-nmap <Leader>r <Plug>(go-run)
+nmap <Leader>w :w<CR>

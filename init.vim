@@ -81,6 +81,9 @@ Plug 'junegunn/fzf'
 " syntastic
 Plug 'vim-syntastic/syntastic'
 
+" ale: style check
+Plug 'w0rp/ale'
+
 call plug#end()
 
 " syntastic: syntax checker
