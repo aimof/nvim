@@ -13,6 +13,7 @@ set autoread
 set showcmd
 
 set number
+set numberwidth=6
 set cursorline
 set virtualedit=onemore
 set smartindent
