@@ -5,6 +5,8 @@ set smartindent
 
 let g:go_fmt_command = "goimports"
 let g:go_gocode_autobuild = 1
+let g:go_metalinter_autosave = 1
+
 nmap <Leader>c <Plug>(go-coverage-toggle)
 nmap <Leader>t <Plug>(go-test)
 nmap <Leader>d <Plug>(go-def)

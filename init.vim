@@ -1,6 +1,4 @@
 "leader
-let mapleader = "\<space>"
-nnoremap <Leader>w :w<CR>
 
 "setting
 ""encoding
@@ -9,22 +7,32 @@ set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
 
+set virtualedit=all
+set virtualedit+=onemore
+set virtualedit+=block
+
 set autoread
 set showcmd
 
 set number
 set numberwidth=6
-set cursorline
-set virtualedit=onemore
+set relativenumber
+
 set smartindent
 set showmatch
 set laststatus=2
+
+set cursorline
+set cursorcolumn
 
 set list listchars=tab:\>\-
 
 set shiftwidth=4
 
 set tabstop=4
+
+let mapleader = "\<space>"
+nnoremap <Leader>w :w<CR>
 
 "syntax and colorscheme
 syntax on
@@ -36,6 +44,13 @@ set incsearch
 set wrapscan
 
 set termguicolors
+
+"undo
+if has('persistent_undo')
+	set undodir=$HOME/.config/nvim/.undo
+	set undofile
+	set undolevels=100
+endif
 
 "curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin('~/.vim/plugged')
@@ -79,27 +94,11 @@ Plug 'vim-scripts/grep.vim'
 " (Optional) Multi-entry selection UI.
 Plug 'junegunn/fzf'
 
-" syntastic
-Plug 'vim-syntastic/syntastic'
-
-" ale: style check
-Plug 'w0rp/ale'
-
 " fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 call plug#end()
-
-" syntastic: syntax checker
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 "color scheme
 set t_Co=256
@@ -111,6 +110,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 
 "filetype settings
