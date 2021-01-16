@@ -1,0 +1,45 @@
+# Go
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = 'go'
+
+# Rust
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+on_ft = 'rs'
+
+[[plugins]]
+repo = 'racer-rust/vim-racer'
+on_ft = 'rs'
+
+# Haskell
+[[plugins]]
+repo = 'eagletmt/neco-ghc'
+on_ft = 'hs'
+
+[[plugins]]
+repo = 'dag/vim2hs'
+on_ft = 'hs'
+
+[[plugins]]
+repo = 'pbrisbin/vim-syntax-shakespeare'
+on_ft = 'hs'
+
+# Elixir
+[[plugins]]
+repo = 'elixir-lang/vim-elixir'
+on_ft = 'ex'
+
+[[plugins]]
+repo = 'carlosgaldino/elixir-snippets'
+on_ft = 'ex'
+
+# Dockerfile
+[[plugins]]
+repo = 'ekalinin/Dockerfile.vim'
+
+# Toml
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+

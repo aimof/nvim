@@ -1,5 +1,3 @@
-"leader
-
 "setting
 ""encoding
 set fenc=utf-8
@@ -31,6 +29,7 @@ set shiftwidth=4
 
 set tabstop=4
 
+"leader
 let mapleader = "\<space>"
 nnoremap <Leader>w :w<CR>
 
@@ -55,60 +54,52 @@ endif
 "vimdoc-ja
 set helplang=ja,en
 
-"curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-call plug#begin('~/.vim/plugged')
+"verbose
+" set verbosefile=/tmp/vim.log
+" set verbose=0
 
-"vim help ja
-Plug 'vim-jp/vimdoc-ja'
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
 
-Plug 'cocopon/iceberg.vim'
+" Required:
+set runtimepath+=$HOME/.cache/dein/repos/github.com/Shougo/dein.vim
 
-"go plugin
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+" Required:
+if dein#load_state('$HOME/.cache/dein')
+  call dein#begin('$HOME/.cache/dein')
 
-"Rust plugin
-Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
+  call dein#load_toml('$HOME/.config/nvim/dein.toml',      {'lazy': 0})
+  call dein#load_toml('$HOME/.config/nvim/dein_lazy.toml', {'lazy': 1})
 
-"haskell
-Plug 'eagletmt/neco-ghc'
-Plug 'dag/vim2hs'
-Plug 'pbrisbin/vim-syntax-shakespeare'
+  " Let dein manage dein
+  " Required:
+  call dein#add('$HOME/.cache/dein/repos/github.com/Shougo/dein.vim')
 
-"elixir plugin
-Plug 'elixir-lang/vim-elixir'
-Plug 'carlosgaldino/elixir-snippets'
+  " Add or remove your plugins here like this:
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
 
-"NERDTree
-Plug 'scrooloose/nerdtree'
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
 
-"vim-fugitive
-Plug 'tpope/vim-fugitive'
+" Required:
+filetype plugin indent on
+syntax enable
 
-"Dokcerfile
-Plug 'ekalinin/Dockerfile.vim'
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
 
-"ion
-Plug 'vmchale/ion-vim'
+"End dein Scripts-------------------------
 
-"conque-GDB
-Plug 'vim-scripts/Conque-GDB'
-
-"grep.vim
-Plug 'vim-scripts/grep.vim'
-
-" (Optional) Multi-entry selection UI.
-Plug 'junegunn/fzf'
-
-" fzf
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-
-call plug#end()
-
-"color scheme
+" color scheme
 set t_Co=256
-colorscheme iceberg
+colorscheme hybrid
 
 "NERDTree
 autocmd StdinReadPre * let s:std_in=1

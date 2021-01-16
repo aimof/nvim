@@ -1,0 +1,42 @@
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
+# NerdTree
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+# neocomplete
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+
+# vim-fugitive
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+# Conque-GDB
+[[plugins]]
+repo = 'vim-scripts/Conque-GDB'
+
+# grep.vim
+[[plugins]]
+repo = 'vim-scripts/grep.vim'
+
+# Color scheme hybrid
+[[plugins]]
+repo = 'w0ng/vim-hybrid'
+
+# fzf
+[[plugins]]
+repo = 'junegunn/fzf'
+build = './install --bin'
+merged = '0'
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
+hook_add = '''
+  command! -bang -nargs=* Rg
+    \ call fzf#vim#grep(
+    \ 'rg --line-number --no-heading '.shellescape(<1-args>, 0,
+    \ fzf#vim#with_preview({'options': '--exact --reverse'}, 'right:50%:wrap'))
+'''
