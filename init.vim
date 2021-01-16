@@ -52,8 +52,14 @@ if has('persistent_undo')
 	set undolevels=100
 endif
 
+"vimdoc-ja
+set helplang=ja,en
+
 "curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin('~/.vim/plugged')
+
+"vim help ja
+Plug 'vim-jp/vimdoc-ja'
 
 Plug 'cocopon/iceberg.vim'
 
